@@ -1,4 +1,4 @@
-# SecureCrypt - Tool to encrypt or decrypt .txt files
+# SecureCrypt - Tool to encrypt or decrypt all file formats
 
 
 
