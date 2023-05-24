@@ -23,29 +23,33 @@ $ python3 main.py
 
 > Note: Tested with python version 3.11.2 and pip version 23.0.1
 
-1. pkg update && pkg upgrade
+1. ```
+   pkg update && pkg upgrade
+   ```
 
-2. pkg install python-cryptography
+2. ```
+   pkg install python-cryptography
+   ```
 
 3. clone this repo
 
-   ``````
+   ```
    git clone https://github.com/ilhamrzr/SecureCrypt
-   ``````
+   ```
 
 4. change directory
 
-   ``````
+   ```
    cd SecureCrypt
-   ``````
+   ```
 
 5. edit file `requirements.txt` and remove `cryptography==40.0.2`
 
-6. install `requirements.txt`
+6. install dependency
 
-   ``````
+   ```
    pip install -r requirements.txt
-   ``````
+   ```
 
 7. run this tool
 
