@@ -18,5 +18,4 @@ $ python3 main.py
 
 ### Use
 
-<video src="https://raw.githubusercontent.com/ilhamrzr/SecureCrypt/main/static/SecureCrypt.mp4"></video>
-
+[https://youtu.be/WsBtD41f6LU](https://youtu.be/WsBtD41f6LU)
