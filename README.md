@@ -6,7 +6,7 @@
 
 ### How to install
 
-`Note: Tested on Windows WSL/Linux
+Note: Tested on Windows WSL/Linux
 
 ```
 $ git clone https://github.com/ilhamrzr/SecureCrypt
