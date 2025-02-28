@@ -1,4 +1,4 @@
-# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔐 SecureCrypt - Secure & Easy File Encryption
+# 🔐 SecureCrypt - Secure & Easy File Encryption
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ilhamrzr/SecureCrypt/main/static/SecureCrypt.png" alt="SecureCrypt" width="500">
