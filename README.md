@@ -35,7 +35,7 @@ $ pip3 install -r requirements.txt
 $ python3 main.py
 ```
 
-### 📲 Installation on Termux
+## **📲 Installation on Termux**
 
 > Note: Tested with python version 3.11.2 and pip version 23.0.1
 
@@ -108,6 +108,6 @@ We welcome contributions from everyone! To contribute, follow these steps:
 
 We will review your contributions as soon as possible! 😊
 
-### **📜 License**
+## **📜 License**
 
 This project is licensed under the **MIT License** – you are free to use it for personal and commercial purposes as long as you provide attribution to the original creator.
