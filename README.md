@@ -1,8 +1,8 @@
-# 🔐 SecureCrypt - Secure & Easy File Encryption
+# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔐 SecureCrypt - Secure & Easy File Encryption
 
-
-
-![SecureCrypt](https://raw.githubusercontent.com/ilhamrzr/SecureCrypt/main/static/SecureCrypt.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ilhamrzr/SecureCrypt/main/static/SecureCrypt.png" alt="SecureCrypt" width="500">
+</p>
 
 SecureCrypt is a Python-based encryption tool that allows you to **securely encrypt and decrypt files** using **Fernet (AES-128-CBC)**. It utilizes **PBKDF2-HMAC-SHA256** for key derivation, ensuring **high security** to protect your files from unauthorized access.
 
@@ -11,16 +11,20 @@ SecureCrypt is a Python-based encryption tool that allows you to **securely encr
 ## **🚀 Key Features**
 
 ✅ **Strong Encryption:** Uses **Fernet (AES-128-CBC)** for high-level security.
+
 ✅ **Supports Various File Types:** Works with **.txt, .pdf, .docx, .xlsx, .sh, .py, .php, .html, .mp3, .mp4, .zip, .exe**, and more.
+
 ✅ **Password Protection:** Files can only be decrypted with the correct password.
+
 ✅ **Encrypted File Detection:** Automatically detects whether a file is already encrypted.
+
 ✅ **Cross-Platform:** Runs on **Windows, Linux, and macOS** without additional modifications.
 
 ## **How to install**
 
 > Note: Tested on Windows WSL/Linux/Termux
 
-### **Installation on Windows WSL/Linux**
+## **Installation on Windows WSL/Linux**
 
 ```
 $ git clone https://github.com/ilhamrzr/SecureCrypt
@@ -80,13 +84,15 @@ $ python3 main.py
    python main.py
    ```
 
-### **⚠️ Important Notes**
+## **⚠️ Important Notes**
 
 ⚠ **Do not forget your password!** If lost, the file **cannot be decrypted**.
+
 ⚠ **Do not encrypt files that are currently in use** (e.g., an open Excel file).
+
 ⚠ **Make a backup before encrypting important files to avoid data loss.**
 
-### How to use
+## How to use
 
 [https://youtu.be/WsBtD41f6LU](https://youtu.be/WsBtD41f6LU)
 
