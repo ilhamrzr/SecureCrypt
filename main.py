@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
@@ -7,7 +9,7 @@ import base64
 import getpass
 import os
 
-banner = '''
+banner = r'''
   ____                            ____                  _   
  / ___|  ___  ___ _   _ _ __ ___ / ___|_ __ _   _ _ __ | |_ 
  \___ \ / _ \/ __| | | | '__/ _ \ |   | '__| | | | '_ \| __|
@@ -20,8 +22,9 @@ if os.name == 'nt':
     os.system('color')
 
 
-def generate_fernet_key(password):
-    salt = b'salt_'
+def generate_fernet_key(password, salt=None):
+    if salt is None:
+        salt = os.urandom(16)
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=32,
@@ -30,10 +33,12 @@ def generate_fernet_key(password):
         backend=default_backend()
     )
     key = base64.urlsafe_b64encode(kdf.derive(password))
-    return key
+    return key, salt
 
 
-def encrypt_file(file_path, key):
+def encrypt_file(file_path, password):
+    key, salt = generate_fernet_key(password)
+
     with open(file_path, 'rb') as file:
         data = file.read()
 
@@ -41,12 +46,22 @@ def encrypt_file(file_path, key):
     encrypted_data = fernet.encrypt(data)
 
     with open(file_path, 'wb') as file:
-        file.write(encrypted_data)
+        file.write(b"ENC!" + salt + encrypted_data)
 
 
-def decrypt_file(file_path, key):
+def decrypt_file(file_path, password):
     with open(file_path, 'rb') as file:
         encrypted_data = file.read()
+
+    if not encrypted_data.startswith(b"ENC!"):
+        print('[{0}] This is not an encrypted file.'.format(colored('x', 'red')))
+        return False
+    
+    encrypted_data = encrypted_data[4:]
+    salt = encrypted_data[:16]
+    encrypted_data = encrypted_data[16:]
+
+    key, _ = generate_fernet_key(password, salt)
 
     try:
         fernet = Fernet(key)
@@ -74,20 +89,17 @@ if __name__ == '__main__':
         if operation == '1':
             file_path = input("Your file path: ")
             password = getpass.getpass("Your key: ").encode()
-            key = generate_fernet_key(password)
+            encrypt_file(file_path, password)
 
-            encrypt_file(file_path, key)
             print('[{0}] Encrypted file!!\n'.format(
                 colored('+', 'green')))
             break
         elif operation == '2':
             file_path = input("Your file path: ")
             password = getpass.getpass("Your key: ").encode()
-            key = generate_fernet_key(password)
 
-            while not decrypt_file(file_path, key):
+            while not decrypt_file(file_path, password):
                 password = getpass.getpass("Your key: ").encode()
-                key = generate_fernet_key(password)
 
             break
         elif operation == '3':
